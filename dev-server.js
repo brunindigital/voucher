@@ -68,6 +68,13 @@ var server = http.createServer(function (req, res) {
   var pathname = parsed.pathname;
   makeRes(res);
 
+  if (pathname === '/' || pathname === '/index.html') {
+    res.statusCode = 307;
+    res.setHeader('Location', '/1.html' + (parsed.search || ''));
+    res.end();
+    return;
+  }
+
   var handler = handlers[pathname];
   if (handler) {
     req.query = parsed.query;
