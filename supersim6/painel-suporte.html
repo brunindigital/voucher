@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Painel de suporte</title>
+  <link rel="stylesheet" href="css/support.css">
+  <script src="js/support-admin.js" defer></script>
+</head>
+<body class="admin-page">
+  <header class="topbar"><div class="topbar-inner"><a class="back" href="suporte.html" aria-label="Abrir página de suporte">&#8592;</a><span>Painel de suporte</span><span class="header-mark" aria-hidden="true">S<span>.</span></span></div></header>
+  <main class="admin-layout">
+    <div class="admin-heading"><span class="eyebrow">ÁREA ADMINISTRATIVA</span><h1>Seu atendimento,<br>sob seu controle<span>.</span></h1><p>Atualize o contato exibido na página de suporte. As alterações valem para todos os visitantes.</p></div>
+    <section class="admin-card">
+      <form id="login-form">
+        <span class="channel-pill">Acesso protegido</span><h2>Entrar no painel</h2><p>Use a senha configurada pelo administrador na Vercel.</p>
+        <label for="admin-password">Senha do painel</label><input id="admin-password" type="password" autocomplete="current-password" required maxlength="256">
+        <button class="primary-button" id="login-button" type="submit">Acessar painel &#8594;</button>
+        <p><button class="text-button" id="demo-button" type="button">Visualizar demonstração sem senha &#8594;</button></p>
+      </form>
+      <form id="settings-form" hidden>
+        <div class="settings-title"><h2>Contato do suporte</h2><button class="text-button" id="logout-button" type="button">Sair</button></div>
+        <div class="safety-note" id="demo-notice" hidden><strong>Modo demonstração — sem publicação</strong><p>Você pode explorar os campos e testar o link. Nenhuma alteração será salva ou aplicada aos visitantes. Para publicar, saia e entre com a senha do painel.</p></div>
+        <p>O número abaixo será usado no botão de WhatsApp.</p>
+        <label for="support-name">Nome do atendimento</label><input id="support-name" maxlength="80" required placeholder="Central de suporte">
+        <label for="support-phone">Número do WhatsApp</label><input id="support-phone" type="tel" inputmode="tel" maxlength="30" required placeholder="+55 11 99999-9999" aria-describedby="phone-help">
+        <small id="phone-help">Inclua o código do país e DDD. Exemplo: +55 11 99999-9999.</small>
+        <label for="support-message">Mensagem inicial</label><textarea id="support-message" rows="4" maxlength="500" required placeholder="Olá! Preciso de ajuda."></textarea>
+        <small>O visitante poderá editar esta mensagem antes de enviá-la.</small>
+        <div class="preview"><span>PRÉVIA DO DESTINO</span><strong id="preview-phone">Nenhum número informado</strong><a id="preview-link" class="text-button" target="_blank" rel="noopener noreferrer" hidden>Testar WhatsApp &#8599;</a></div>
+        <button class="primary-button" id="save-button" type="submit">Salvar alterações &#8594;</button>
+        <p class="saved-at" id="saved-at"></p>
+        <a class="text-button" href="suporte.html" target="_blank" rel="noopener noreferrer">Visualizar página de suporte &#8599;</a>
+      </form>
+      <p class="status" id="admin-status" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+  <footer class="page-footer">A senha permanece somente nesta sessão da página. Ao sair ou recarregar, entre novamente.</footer>
+</body>
+</html>
