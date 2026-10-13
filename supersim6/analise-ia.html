@@ -981,12 +981,6 @@ function dadosRecebimento(done){
 }
 
 /* ============ DADOS DAS PERGUNTAS ============ */
-var Q_finalidade = { save:'finalidade', audio:VOICE_INTRO,
-  agent:[ 'Show! Então bora começar, e pode ficar bem à vontade comigo 💚',
-          'Antes de falar de qualquer número, eu quero **te entender de verdade**. Me conta com sinceridade: **pra que você precisa** desse voucher agora?' ],
-  options:[ {em:'💳',label:'Quitar dívidas',val:'dividas'},{em:'🏥',label:'Emergência médica',val:'medica'},
-            {em:'🏠',label:'Reformar a casa',val:'reforma'},{em:'📈',label:'Investir no meu negócio',val:'negocio'},
-            {em:'✨',label:'Outro motivo',val:'outro'} ] };
 var Q_renda = { save:'renda',
   agent:['Agora, pra eu conseguir a melhor condição pra você **sem te comprometer demais**, preciso entender a sua realidade 💚','Qual é a sua **renda mensal** hoje, mais ou menos?'],
   options:[ {em:'💵',label:'Até R$ 1.500',val:1300},{em:'💵',label:'R$ 1.500 a R$ 3.000',val:2300},
@@ -1004,40 +998,8 @@ var Q_parcelacabe = { save:'parcela_cabe',
     'Me conta: **quanto você costuma gastar com combustível por semana para manter seu veículo abastecido?** 🚗'],  
   options:[{em:'⛽',label:'Até R$ 150 por semana',val:150},{em:'👍',label:'Entre R$ 150 e R$ 300',val:300},{em:'💪',label:'Entre R$ 300 e R$ 500',val:500},{em:'🚀',label:'Acima de R$ 500',val:700}] };
 
-/* RAMOS por finalidade (cada resposta abre perguntas próprias) */
+/* Perguntas sobre o uso do voucher de combustível. */
 var BRANCH = {
-  dividas:[
-    {save:'valordivida', agent:['Olha, decidir quitar uma dívida é um passo enorme — e eu admiro **demais** quem toma a decisão de virar o jogo 👏','Me conta com sinceridade, sem vergonha nenhuma: **quanto você deve** no total hoje?'],
-      options:[{label:'Até R$ 2.000',val:'ate2k'},{label:'R$ 2.000 a R$ 5.000',val:'2a5k'},{label:'R$ 5.000 a R$ 10.000',val:'5a10k'},{label:'Mais de R$ 10.000',val:'+10k'}]},
-    {save:'credor', agent:['Tá anotado, e pode confiar em mim 💚 Essa dívida é mais com **cartão/banco**, **outro empréstimo** ou **contas do dia a dia**?'],
-      options:[{em:'💳',label:'Cartão ou banco',val:'cartao'},{em:'📄',label:'Outro empréstimo',val:'emprestimo'},{em:'🏠',label:'Contas do dia a dia',val:'contas'}]},
-    {save:'pagaminimo', agent:['E hoje, sendo bem honesto(a) comigo: você ainda consegue pagar pelo menos **o valor mínimo**?'],
-      options:[{em:'✅',label:'Sim, ainda consigo',val:'sim'},{em:'😔',label:'Tá bem difícil',val:'nao',reply:'Ó, fica tranquilo(a)... é **exatamente pra isso** que eu tô aqui. A gente vai te tirar dessa juntos, viu? 💪'}]},
-  ],
-  medica:[
-    {save:'urgencia', agent:['Poxa, sinto muito de verdade 😔 Fica calmo(a) que eu vou fazer o possível pra agilizar o seu caso. É uma urgência **pra agora**?'],
-      options:[{em:'🚨',label:'Sim, é pra agora',val:'agora'},{em:'📅',label:'Pros próximos dias',val:'dias'}]},
-    {save:'quem', agent:['Entendi. E esse cuidado é pra **você** ou pra alguém que você ama?'],
-      options:[{em:'🧑',label:'Pra mim',val:'eu'},{em:'❤️',label:'Pra um familiar',val:'familiar',reply:'Cuidar de quem a gente ama não tem preço mesmo... 💚 Vou correr aqui pra te ajudar.'}]},
-    {save:'temparte', agent:['Tô aqui com você nisso, tá? 💚 Você já tem **uma parte** do valor guardada ou precisa do total?'],
-      options:[{em:'🤝',label:'Já tenho uma parte',val:'sim'},{em:'🙏',label:'Preciso do valor total',val:'nao'}]},
-  ],
-  reforma:[
-    {save:'reformasize', agent:['Aiii, adoro! 🏡 Reforma deixa a casa com a nossa cara e ainda valoriza demais o imóvel. É uma **reforma grande** ou uns ajustes mais pontuais?'],
-      options:[{em:'🏗️',label:'Reforma grande',val:'grande'},{em:'🔧',label:'Ajustes pontuais',val:'peq'}]},
-    {save:'imovel', agent:['Que sonho bom 💚 E esse imóvel é **próprio** ou você mora de aluguel?'],
-      options:[{em:'🏠',label:'Próprio',val:'proprio'},{em:'🔑',label:'Alugado',val:'alugado'}]},
-    {save:'orcamento', agent:['Perfeito. Você já tem um **orçamento** mais ou menos na cabeça pra obra?'],
-      options:[{em:'✅',label:'Sim, já tenho',val:'sim'},{em:'🤔',label:'Ainda não',val:'nao'}]},
-  ],
-  negocio:[
-    {save:'negstatus', agent:['Que orgulho de quem empreende! 📈 voucher pra fazer o negócio crescer é um dos investimentos mais inteligentes que existe. Seu negócio **já está rodando** ou tá começando agora?'],
-      options:[{em:'🏪',label:'Já está funcionando',val:'sim'},{em:'🌱',label:'Estou começando agora',val:'novo'}]},
-    {save:'usocredito', agent:['Massa! E esse dinheiro é mais pra **capital de giro** (fôlego no caixa) ou pra **equipamento/estoque**?'],
-      options:[{em:'💰',label:'Capital de giro',val:'giro'},{em:'📦',label:'Equipamento/estoque',val:'equip'}]},
-    {save:'fatura', agent:['Só pra eu entender o tamanho do seu negócio: mais ou menos **quanto ele fatura** por mês hoje?'],
-      options:[{em:'💵',label:'Até R$ 5 mil',val:'ate5'},{em:'💵',label:'R$ 5 mil a R$ 15 mil',val:'5a15'},{em:'💰',label:'Mais de R$ 15 mil',val:'+15'}]},
-  ],
   outro:[
     {save:'tipoobjetivo', agent:['Que bom que você está buscando economizar no combustível! ⛽💙 Me conta uma coisa: qual seria sua principal finalidade ao utilizar o voucher de combustível?'],
       options:[{em:'🚗',label:'Abastecer para trabalhar',val:'compra'},{em:'⛽',label:'Economizar no abastecimento',val:'viagem'},{em:'🚘',label:'Abastecer para uso pessoal',val:'outro'}]},
@@ -1129,14 +1091,8 @@ function socialProofBeat(cb){
 }
 function run(){ confirmarIdentidade(function(){ startFlow(); }); }
 function startFlow(){
-  if(answers.finalidade){
-    infoPage([
-      'Então... já recebi as informações que você me passou! 💙⛽ Agora vamos continuar com a **análise do seu voucher de combustível** para verificar o valor que pode estar disponível para você. ✨',
-      'Vou te fazer algumas perguntinhas rápidas para entender melhor seu perfil de motorista e verificar sua **elegibilidade ao benefício**. 🚗💛'
-    ], 'Pode começar', function(){ askSequence(BRANCH[answers.finalidade]||BRANCH.outro, afterBranch); }, VOICE_INTRO);
-  } else {
-    askQuestion(Q_finalidade, function(){ askSequence(BRANCH[answers.finalidade]||BRANCH.outro, afterBranch); });
-  }
+  saveAns('finalidade', 'outro');
+  askSequence(BRANCH.outro, afterBranch);
 }
 function afterBranch(){
   askQuestion(Q_ocupacao(), function(){
